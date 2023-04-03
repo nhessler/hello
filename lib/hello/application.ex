@@ -17,9 +17,11 @@ defmodule Hello.Application do
       # Start Finch
       {Finch, name: Hello.Finch},
       # Start the Endpoint (http/https)
-      HelloWeb.Endpoint
+      HelloWeb.Endpoint,
       # Start a worker by calling: Hello.Worker.start_link(arg)
       # {Hello.Worker, arg}
+      # Start a server that greats the world
+      {Hello.Server, fn -> "Hello, world!" end}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
